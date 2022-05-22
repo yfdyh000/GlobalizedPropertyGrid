@@ -1,21 +1,24 @@
-Microsoft Visual Studio Solution File, Format Version 7.00
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalizedPropertyGrid", "GlobalizedPropertyGrid.csproj", "{0C6F6F8D-120E-4FF4-AA21-BA81FC52CD62}"
 EndProject
 Global
-	GlobalSection(SolutionConfiguration) = preSolution
-		ConfigName.0 = Debug
-		ConfigName.1 = Release
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectDependencies) = postSolution
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C6F6F8D-120E-4FF4-AA21-BA81FC52CD62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C6F6F8D-120E-4FF4-AA21-BA81FC52CD62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C6F6F8D-120E-4FF4-AA21-BA81FC52CD62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C6F6F8D-120E-4FF4-AA21-BA81FC52CD62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectConfiguration) = postSolution
-		{0C6F6F8D-120E-4FF4-AA21-BA81FC52CD62}.Debug.ActiveCfg = Debug|.NET
-		{0C6F6F8D-120E-4FF4-AA21-BA81FC52CD62}.Debug.Build.0 = Debug|.NET
-		{0C6F6F8D-120E-4FF4-AA21-BA81FC52CD62}.Release.ActiveCfg = Release|.NET
-		{0C6F6F8D-120E-4FF4-AA21-BA81FC52CD62}.Release.Build.0 = Release|.NET
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-	EndGlobalSection
-	GlobalSection(ExtensibilityAddIns) = postSolution
+		SolutionGuid = {98C80981-2AA9-410C-B13B-2ADB9E3BCFDB}
 	EndGlobalSection
 EndGlobal
