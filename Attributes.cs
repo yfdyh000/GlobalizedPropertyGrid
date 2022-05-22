@@ -8,6 +8,7 @@ namespace GlobalizedPropertyGrid
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple=false, Inherited=true)]
 	public class GlobalizedPropertyAttribute : Attribute
 	{
+		private String resourceCategory = "";
 		private String resourceName = "";
 		private String resourceDescription = "";
 		private String resourceTable = "";
@@ -17,6 +18,11 @@ namespace GlobalizedPropertyGrid
 			resourceName = name;
 		}
 
+		public String Category
+		{
+			get { return resourceCategory; }
+			set { resourceCategory = value; }
+		}
 		public String Name
 		{
 			get {  return resourceName;  }

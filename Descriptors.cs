@@ -36,6 +36,43 @@ namespace GlobalizedPropertyGrid
 			get { return basePropertyDescriptor.ComponentType; }
 		}
 
+		public override string Category
+		{
+			get
+			{
+				// First lookup the property if GlobalizedPropertyAttribute instances are available. 
+				// If yes, then try to get resource table name and display name id from that attribute.
+				string tableName = "";
+				string displayName = "";
+				foreach (Attribute oAttrib in this.basePropertyDescriptor.Attributes)
+				{
+					if (oAttrib.GetType().Equals(typeof(GlobalizedPropertyAttribute)))
+					{
+						displayName = ((GlobalizedPropertyAttribute)oAttrib).Category;
+						tableName = ((GlobalizedPropertyAttribute)oAttrib).Table;
+					}
+				}
+
+				// If no resource table specified by attribute, then build it itself by using namespace and class name.
+				if (tableName.Length == 0)
+					tableName = basePropertyDescriptor.ComponentType.Namespace + "." + basePropertyDescriptor.ComponentType.Name;
+
+				// If no display name id is specified by attribute, then construct it by using default display name (usually the property name) 
+				if (displayName.Length == 0)
+					displayName = this.basePropertyDescriptor.Category + "Category"; ;
+
+				// Now use table name and display name id to access the resources.  
+				ResourceManager rm = new ResourceManager(tableName, basePropertyDescriptor.ComponentType.Assembly);
+
+				// Get the string from the resources. 
+				// If this fails, then use default display name (usually the property name) 
+				string s = rm.GetString(displayName);
+				this.localizedName = (s != null) ? s : this.basePropertyDescriptor.DisplayName;
+
+				return this.localizedName;
+			}
+		}
+
 		public override string DisplayName
 		{
 			get 
