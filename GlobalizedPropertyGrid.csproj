@@ -98,7 +98,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Person.en.resx" />
-    <EmbeddedResource Include="Person.resx" />
+    <EmbeddedResource Include="Person.de.resx" />
     <EmbeddedResource Include="SpecialStringTable.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
