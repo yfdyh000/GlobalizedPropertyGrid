@@ -15,9 +15,9 @@ namespace GlobalizedPropertyGrid
     /// </summary>
     public class GlobalizedPropertyDescriptor : PropertyDescriptor
     {
-        private PropertyDescriptor basePropertyDescriptor;
-        private string localizedName = "";
-        private string localizedDescription = "";
+        private readonly PropertyDescriptor basePropertyDescriptor;
+        private string localizedName;
+        private string localizedDescription;
 
         public GlobalizedPropertyDescriptor(PropertyDescriptor basePropertyDescriptor) : base(basePropertyDescriptor) => this.basePropertyDescriptor = basePropertyDescriptor;
 

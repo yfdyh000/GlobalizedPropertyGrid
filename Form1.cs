@@ -10,8 +10,8 @@ namespace GlobalizedPropertyGrid
     /// </summary>
     public class Form1 : System.Windows.Forms.Form
     {
-        private Person person;
-        private string[] supportedLanguages = null;
+        private readonly Person person;
+        private readonly string[] supportedLanguages = null;
 
         internal System.Windows.Forms.PropertyGrid PropertyGrid1;
         private System.Windows.Forms.ComboBox cbLang;
@@ -19,7 +19,7 @@ namespace GlobalizedPropertyGrid
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.Container components = null;
+        private readonly System.ComponentModel.Container components = null;
 
         public Form1()
         {
