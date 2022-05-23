@@ -29,10 +29,7 @@ namespace GlobalizedPropertyGrid
             return basePropertyDescriptor.CanResetValue(component);
         }
 
-        public override Type ComponentType
-        {
-            get { return basePropertyDescriptor.ComponentType; }
-        }
+        public override Type ComponentType => basePropertyDescriptor.ComponentType;
 
         public override string Category
         {
@@ -151,20 +148,11 @@ namespace GlobalizedPropertyGrid
             return this.basePropertyDescriptor.GetValue(component);
         }
 
-        public override bool IsReadOnly
-        {
-            get { return this.basePropertyDescriptor.IsReadOnly; }
-        }
+        public override bool IsReadOnly => this.basePropertyDescriptor.IsReadOnly;
 
-        public override string Name
-        {
-            get { return this.basePropertyDescriptor.Name; }
-        }
+        public override string Name => this.basePropertyDescriptor.Name;
 
-        public override Type PropertyType
-        {
-            get { return this.basePropertyDescriptor.PropertyType; }
-        }
+        public override Type PropertyType => this.basePropertyDescriptor.PropertyType;
 
         public override void ResetValue(object component)
         {
