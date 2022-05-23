@@ -31,8 +31,8 @@ namespace GlobalizedPropertyGrid
             {
                 // First lookup the property if GlobalizedPropertyAttribute instances are available. 
                 // If yes, then try to get resource table name and display name id from that attribute.
-                string tableName = "";
-                string displayName = "";
+                string tableName = null;
+                string displayName = null;
                 foreach (Attribute oAttrib in this.basePropertyDescriptor.Attributes)
                 {
                     if (oAttrib.GetType().Equals(typeof(GlobalizedPropertyAttribute)))
@@ -43,12 +43,10 @@ namespace GlobalizedPropertyGrid
                 }
 
                 // If no resource table specified by attribute, then build it itself by using namespace and class name.
-                if (tableName.Length == 0)
-                    tableName = basePropertyDescriptor.ComponentType.Namespace + "." + basePropertyDescriptor.ComponentType.Name;
+                tableName = tableName ?? basePropertyDescriptor.ComponentType.Namespace + "." + basePropertyDescriptor.ComponentType.Name;
 
                 // If no display name id is specified by attribute, then construct it by using default display name (usually the property name) 
-                if (displayName.Length == 0)
-                    displayName = this.basePropertyDescriptor.Category + "Category"; ;
+                displayName = displayName ?? this.basePropertyDescriptor.Category + "Category"; ;
 
                 // Now use table name and display name id to access the resources.  
                 ResourceManager rm = new ResourceManager(tableName, basePropertyDescriptor.ComponentType.Assembly);
@@ -68,8 +66,8 @@ namespace GlobalizedPropertyGrid
             {
                 // First lookup the property if GlobalizedPropertyAttribute instances are available. 
                 // If yes, then try to get resource table name and display name id from that attribute.
-                string tableName = "";
-                string displayName = "";
+                string tableName = null;
+                string displayName = null;
                 foreach (Attribute oAttrib in this.basePropertyDescriptor.Attributes)
                 {
                     if (oAttrib.GetType().Equals(typeof(GlobalizedPropertyAttribute)))
@@ -80,12 +78,10 @@ namespace GlobalizedPropertyGrid
                 }
 
                 // If no resource table specified by attribute, then build it itself by using namespace and class name.
-                if (string.IsNullOrEmpty(tableName))
-                    tableName = basePropertyDescriptor.ComponentType.Namespace + "." + basePropertyDescriptor.ComponentType.Name;
+                tableName = tableName ?? basePropertyDescriptor.ComponentType.Namespace + "." + basePropertyDescriptor.ComponentType.Name;
 
                 // If no display name id is specified by attribute, then construct it by using default display name (usually the property name) 
-                if (string.IsNullOrEmpty(displayName))
-                    displayName = this.basePropertyDescriptor.DisplayName;
+                displayName = displayName ?? this.basePropertyDescriptor.DisplayName;
 
                 // Now use table name and display name id to access the resources.  
                 ResourceManager rm = new ResourceManager(tableName, basePropertyDescriptor.ComponentType.Assembly);
@@ -106,8 +102,8 @@ namespace GlobalizedPropertyGrid
                 // First lookup the property if there are GlobalizedPropertyAttribute instances
                 // are available. 
                 // If yes, try to get resource table name and display name id from that attribute.
-                string tableName = "";
-                string displayName = "";
+                string tableName = null;
+                string displayName = null;
                 foreach (Attribute oAttrib in this.basePropertyDescriptor.Attributes)
                 {
                     if (oAttrib.GetType().Equals(typeof(GlobalizedPropertyAttribute)))
@@ -118,12 +114,10 @@ namespace GlobalizedPropertyGrid
                 }
 
                 // If no resource table specified by attribute, then build it itself by using namespace and class name.
-                if (tableName.Length == 0)
-                    tableName = basePropertyDescriptor.ComponentType.Namespace + "." + basePropertyDescriptor.ComponentType.Name;
+                tableName = tableName ?? basePropertyDescriptor.ComponentType.Namespace + "." + basePropertyDescriptor.ComponentType.Name;
 
                 // If no display name id is specified by attribute, then construct it by using default display name (usually the property name) 
-                if (displayName.Length == 0)
-                    displayName = this.basePropertyDescriptor.DisplayName + "Description";
+                displayName = displayName ?? this.basePropertyDescriptor.DisplayName + "Description";
 
                 // Now use table name and display name id to access the resources.  
                 ResourceManager rm = new ResourceManager(tableName, basePropertyDescriptor.ComponentType.Assembly);
