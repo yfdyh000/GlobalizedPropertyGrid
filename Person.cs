@@ -8,8 +8,6 @@ namespace GlobalizedPropertyGrid
     /// </summary>
     public class Person : GlobalizedObject
     {
-        private int age = 0;
-
         public Person() { }
 
         public string FirstName { get; set; } = "";
@@ -18,11 +16,7 @@ namespace GlobalizedPropertyGrid
         [GlobalizedProperty("Surname", Description = "ADescription", Table = "GlobalizedPropertyGrid.SpecialStringTable")]
         public string LastName { get; set; } = "";
 
-        public int Age
-        {
-            get { return age; }
-            set { age = value; }
-        }
+        public int Age { get; set; } = 0;
     }
 }
 
