@@ -8,25 +8,15 @@ namespace GlobalizedPropertyGrid
     /// </summary>
     public class Person : GlobalizedObject
     {
-        private string firstName = "";
-        private string lastName = "";
         private int age = 0;
 
         public Person() { }
 
-        public string FirstName
-        {
-            get { return firstName; }
-            set { firstName = value; }
-        }
+        public string FirstName { get; set; } = "";
 
         // Uncomment the next line to see the attribute in action: 
-        [GlobalizedProperty("Surname",Description="ADescription",Table="GlobalizedPropertyGrid.SpecialStringTable")]
-        public string LastName
-        {
-            get { return lastName; }
-            set { lastName = value; }
-        }
+        [GlobalizedProperty("Surname", Description = "ADescription", Table = "GlobalizedPropertyGrid.SpecialStringTable")]
+        public string LastName { get; set; } = "";
 
         public int Age
         {
