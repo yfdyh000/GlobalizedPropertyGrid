@@ -65,7 +65,7 @@ namespace GlobalizedPropertyGrid
                 // Get the string from the resources. 
                 // If this fails, then use default display name (usually the property name) 
                 string s = rm.GetString(displayName);
-                this.localizedName = (s != null) ? s : this.basePropertyDescriptor.DisplayName;
+                this.localizedName = s ?? this.basePropertyDescriptor.DisplayName;
 
                 return this.localizedName;
             }
@@ -102,7 +102,7 @@ namespace GlobalizedPropertyGrid
                 // Get the string from the resources. 
                 // If this fails, then use default display name (usually the property name) 
                 string s = rm.GetString(displayName);
-                this.localizedName = (s != null) ? s : this.basePropertyDescriptor.DisplayName;
+                this.localizedName = s ?? this.basePropertyDescriptor.DisplayName;
 
                 return this.localizedName;
             }
@@ -140,7 +140,7 @@ namespace GlobalizedPropertyGrid
                 // Get the string from the resources. 
                 // If this fails, then use default empty string indictating 'no description' 
                 string s = rm.GetString(displayName);
-                this.localizedDescription = (s != null) ? s : "";
+                this.localizedDescription = s ?? "";
 
                 return this.localizedDescription;
             }
