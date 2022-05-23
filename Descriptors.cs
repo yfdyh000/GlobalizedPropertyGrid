@@ -16,8 +16,8 @@ namespace GlobalizedPropertyGrid
     public class GlobalizedPropertyDescriptor : PropertyDescriptor
     {
         private PropertyDescriptor basePropertyDescriptor;
-        private String localizedName = "";
-        private String localizedDescription = "";
+        private string localizedName = "";
+        private string localizedDescription = "";
 
         public GlobalizedPropertyDescriptor(PropertyDescriptor basePropertyDescriptor) : base(basePropertyDescriptor)
         {
@@ -195,7 +195,7 @@ namespace GlobalizedPropertyGrid
     {
         private PropertyDescriptorCollection globalizedProps;
 
-        public String GetClassName()
+        public string GetClassName()
         {
             return TypeDescriptor.GetClassName(this, true);
         }
@@ -205,7 +205,7 @@ namespace GlobalizedPropertyGrid
             return TypeDescriptor.GetAttributes(this, true);
         }
 
-        public String GetComponentName()
+        public string GetComponentName()
         {
             return TypeDescriptor.GetComponentName(this, true);
         }
