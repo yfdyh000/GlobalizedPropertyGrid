@@ -89,11 +89,11 @@ namespace GlobalizedPropertyGrid
                 }
 
                 // If no resource table specified by attribute, then build it itself by using namespace and class name.
-                if (tableName.Length == 0)
+                if (string.IsNullOrEmpty(tableName))
                     tableName = basePropertyDescriptor.ComponentType.Namespace + "." + basePropertyDescriptor.ComponentType.Name;
 
                 // If no display name id is specified by attribute, then construct it by using default display name (usually the property name) 
-                if (displayName.Length == 0)
+                if (string.IsNullOrEmpty(displayName))
                     displayName = this.basePropertyDescriptor.DisplayName;
 
                 // Now use table name and display name id to access the resources.  
