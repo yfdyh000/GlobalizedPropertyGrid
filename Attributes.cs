@@ -5,10 +5,7 @@ namespace GlobalizedPropertyGrid
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
     public class GlobalizedPropertyAttribute : Attribute
     {
-        public GlobalizedPropertyAttribute(string name)
-        {
-            Name = name;
-        }
+        public GlobalizedPropertyAttribute(string name) => Name = name;
 
         public string Category { get; set; } = "";
         public string Name { get; set; } = "";

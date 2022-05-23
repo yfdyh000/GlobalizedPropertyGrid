@@ -19,15 +19,9 @@ namespace GlobalizedPropertyGrid
         private string localizedName = "";
         private string localizedDescription = "";
 
-        public GlobalizedPropertyDescriptor(PropertyDescriptor basePropertyDescriptor) : base(basePropertyDescriptor)
-        {
-            this.basePropertyDescriptor = basePropertyDescriptor;
-        }
+        public GlobalizedPropertyDescriptor(PropertyDescriptor basePropertyDescriptor) : base(basePropertyDescriptor) => this.basePropertyDescriptor = basePropertyDescriptor;
 
-        public override bool CanResetValue(object component)
-        {
-            return basePropertyDescriptor.CanResetValue(component);
-        }
+        public override bool CanResetValue(object component) => basePropertyDescriptor.CanResetValue(component);
 
         public override Type ComponentType => basePropertyDescriptor.ComponentType;
 
@@ -143,10 +137,7 @@ namespace GlobalizedPropertyGrid
             }
         }
 
-        public override object GetValue(object component)
-        {
-            return this.basePropertyDescriptor.GetValue(component);
-        }
+        public override object GetValue(object component) => this.basePropertyDescriptor.GetValue(component);
 
         public override bool IsReadOnly => this.basePropertyDescriptor.IsReadOnly;
 
@@ -154,20 +145,11 @@ namespace GlobalizedPropertyGrid
 
         public override Type PropertyType => this.basePropertyDescriptor.PropertyType;
 
-        public override void ResetValue(object component)
-        {
-            this.basePropertyDescriptor.ResetValue(component);
-        }
+        public override void ResetValue(object component) => this.basePropertyDescriptor.ResetValue(component);
 
-        public override bool ShouldSerializeValue(object component)
-        {
-            return this.basePropertyDescriptor.ShouldSerializeValue(component);
-        }
+        public override bool ShouldSerializeValue(object component) => this.basePropertyDescriptor.ShouldSerializeValue(component);
 
-        public override void SetValue(object component, object value)
-        {
-            this.basePropertyDescriptor.SetValue(component, value);
-        }
+        public override void SetValue(object component, object value) => this.basePropertyDescriptor.SetValue(component, value);
     }
     #endregion
 
