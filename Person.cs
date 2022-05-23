@@ -21,7 +21,7 @@ namespace GlobalizedPropertyGrid
         }
 
         // Uncomment the next line to see the attribute in action: 
-        // [GlobalizedProperty("Surname",Description="ADescription",Table="GlobalizedPropertyGrid.SpecialStringTable")]
+        [GlobalizedProperty("Surname",Description="ADescription",Table="GlobalizedPropertyGrid.SpecialStringTable")]
         public string LastName
         {
             get { return lastName; }
